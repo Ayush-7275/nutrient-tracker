@@ -16,10 +16,10 @@ export default function Signup() {
     setLoading(false)
     
     if (res?.success) {
-      toast.success('Account created! Redirecting...')
+      toast.success('खाता बन गया! रीडायरेक्ट हो रहा है...')
       router.push('/signin')
     } else {
-      toast.error(res?.error || "Error signing up")
+      toast.error(res?.error || "साइन अप करने में त्रुटि हुई")
     }
   }
 
@@ -29,13 +29,13 @@ export default function Signup() {
       
       <div className="bg-white p-8 md:p-10 rounded-2xl shadow-xl w-full max-w-md border border-gray-100">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Create Account</h1>
-          <p className="text-gray-500">Join NutriTracker AI today</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">खाता बनाएं</h1>
+          <p className="text-gray-500">आज ही NutriTracker AI से जुड़ें</p>
         </div>
 
         <form action={handleSubmit} className="space-y-5">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">ईमेल पता</label>
             <input 
               name="email" 
               type="email" 
@@ -46,7 +46,7 @@ export default function Signup() {
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">पासवर्ड</label>
             <input 
               name="password" 
               type="password" 
@@ -60,14 +60,14 @@ export default function Signup() {
             disabled={loading}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-all flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            {loading ? <Loader2 className="animate-spin w-5 h-5" /> : <>Sign Up <ArrowRight className="w-4 h-4" /></>}
+            {loading ? <Loader2 className="animate-spin w-5 h-5" /> : <>साइन अप करें <ArrowRight className="w-4 h-4" /></>}
           </button>
         </form>
 
         <p className="text-center mt-8 text-gray-500 text-sm">
-          Already have an account?{' '}
+          पहले से खाता है?{' '}
           <Link href="/signin" className="text-blue-600 font-semibold hover:underline">
-            Log in
+            लॉग इन करें
           </Link>
         </p>
       </div>
